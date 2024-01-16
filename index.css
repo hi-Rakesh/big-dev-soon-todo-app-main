@@ -1,4 +1,205 @@
 /* This is an example CSS file, feel free to remove/edit it anytime */
+@font-face {
+  font-family: "Kanit-Regular";
+  src: url("assets/fonts/Kanit-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit-Medium";
+  src: url("assets/fonts/Kanit-Medium.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Kanit-Light";
+  src: url("assets/fonts/Kanit-Light.ttf");
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit-Regular", sans-serif;
+}
+.todo-cantainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #000 75%, transparent 75%),
+    url("assets/images/todo-bg-2.jpg  ") center/cover no-repeat;
+  color: white;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  margin-bottom: 15px;
+}
+.heading h1 {
+  font-family: "Kanit-Medium", sans-serif;
+  font-size: 24px;
+}
+.heading img {
+  width: 24px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.list-cantainer {
+  position: relative;
+  background-color: #24273d;
+  width: 40%;
+  height: 80vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  overflow: auto;
+  transition: all 0.5s linear;
+}
+.input-container {
+  position: relative;
+  background-color: #24273d;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.5s linear;
+}
+.input-container input {
+  width: 100%;
+  border-radius: 18px;
+  height: 35px;
+  border: 1px #a19e9e solid;
+  background-color: #24273d;
+  padding: 10px;
+  font-family: "Kanit-Regular", sans-serif;
+  color: #fff;
+  outline: none;
+}
+.input-container input:active,
+input:hover {
+  border: 2px #93a9ff solid;
+}
+.input-container button {
+  position: absolute;
+  right: 20px;
+  width: 100px;
+  border-radius: 18px;
+  background-color: #24273d;
+  height: 35px;
+  border: 2px #93a9ff solid;
+  background-color: #93a9ff;
+  font-family: "Kanit-Medium", sans-serif;
+  color: #fff;
+}
+.input-container button:hover {
+  background-color: #7f97f9;
+}
+.task-list {
+  margin-top: 10px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #24273d;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px #a19e9e solid;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #ffffff;
+  transition: all 0.5s linear;
+}
+.task-item span {
+  font-family: "Kanit-Regular", sans-serif;
+}
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  height: 60vh;
+  transition: all 0.5s linear;
+}
+.empty-state p {
+  margin-top: 10px;
+  font-family: "Kanit-Medium", sans-serif;
+}
+.empty-state img {
+  width: 100px;
+  filter: invert(1);
+}
+.delete-icon {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.delete-icon {
+  display: none;
+}
+.task-item:hover .delete-icon {
+  display: block;
+}
+.delete-icon:hover {
+  background-color: #a19e9e;
+  border-radius: 50%;
+}
+.complete-checkbox {
+  margin-right: 10px;
+}
+.completed-task {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+#taskCounter {
+  font-family: "Kanit-Light", sans-serif;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+body[data-theme="light"] .todo-cantainer {
+  background: linear-gradient(to top, #fff 75%, transparent 75%),
+    url("assets/images/todo-bg-2.jpg  ") center/cover no-repeat;
+}
+
+body[data-theme="light"] .list-cantainer,
+body[data-theme="light"] .input-container,
+body[data-theme="light"] input {
+  background-color: #fff;
+  color: #000;
+}
+body[data-theme="light"] .empty-state,
+body[data-theme="light"] #taskCounter,
+body[data-theme="light"] .footer span {
+  color: #000;
+}
+body[data-theme="light"] .task-item {
+  background-color: #fff;
+  border: 1px #444 solid;
+  color: #000;
+}
+body[data-theme="light"] .empty-state img {
+  filter: invert(0);
+}
+body[data-theme="light"] .task-item img {
+  filter: invert(1);
+}
 .footer {
   position: absolute;
   bottom: 0;
@@ -7,13 +208,36 @@
   padding: 10px;
   text-align: center;
 }
-
 .footer a {
+  font-family: "Kanit-Light", sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
 }
 
 .footer span {
+  font-family: "Kanit-Light", sans-serif;
   font-size: 14px;
+  color: #fff;
+}
+.hidden {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .list-cantainer {
+    width: 90%;
+    height: 75%;
+  }
+  .heading {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .list-cantainer {
+    width: 80%;
+    height: 75%;
+  }
+  .heading {
+    width: 80%;
+  }
 }

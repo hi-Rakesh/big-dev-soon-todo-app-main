@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <bds />
-    <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
-    <title>BigDevSoon - Todo App Project</title>
-  </head>
-  <body>
-    <!-- Place below is for your own exciting code -->
-    <p>Time to write some code! 👀 hii </p> 
-    <!-- Change the [ME] part to your own name/GitHub link -->
-    <div class="footer">
-      <a href="https://bigdevsoon.me" target="_blank" rel="noopener noreferrer"
-        >Project by BigDevSoon</a
-      >
-      |
-      <span>Built with ❤️ by [ME]</span>
+
+<head>
+  <bds />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Rakesh Kumar Sahu">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js" defer></script>
+  <title>BigDevSoon - Todo App Project</title>
+</head>
+
+<body data-theme="dark">
+  <!-- Place below is for your own exciting code -->
+  <div class="todo-cantainer">
+    <div class="heading">
+      <h1>TODO</h1>
+      <img src="assets/icons/light-mode.svg" id="themeToggle" alt="dark-mode">
     </div>
-  </body>
+    <div class="list-cantainer">
+      <div class="input-container">
+        <input type="text" id="newTodoInput" placeholder="Create a new todo...">
+        <button id="addTodoButton" class="hidden">Add todo</button>
+      </div>
+      <div id="taskList" class="task-list empty-state">
+        <img src="assets/icons/cactus.svg" alt="Empty State Image">
+        <p>There are no todos</p>
+      </div>
+      <div id="taskCounter" class="hidden"></div>
+    </div>
+  </div>
+  <!-- Change the [ME] part to your own name/GitHub link -->
+  <div class="footer">
+    <a href="https://bigdevsoon.me" target="_blank" rel="noopener noreferrer">Project by BigDevSoon</a>
+    |
+    <span>Built with ❤️ by [<a href="https://github.com/hi-Rakesh" target="_blank"
+        rel="noopener noreferrer">hi-Rakesh</a>]</span>
+  </div>
+</body>
+
 </html>
